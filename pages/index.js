@@ -33,7 +33,9 @@ export default function Home(props) {
 
 Home.getInitialProps = async () => {
   const cards = await (await fetch('http://localhost:3000/api/cards')).json()
-  return {
-    cards
-  }
+  const entities = await (await fetch('http://localhost:3000/api/entities')).json()
+    return {
+      cards,
+      entities
+    }
 }
