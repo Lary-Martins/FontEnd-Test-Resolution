@@ -5,6 +5,13 @@ import '../../styles/Card.css';
 export default function Card({ card, entities }) {
   console.log({ card, entities })
 
+  const delimitsNumberOfWords = (text) => {
+    const arryOfWords = text.split(' ', 50);
+    const delimetedText = arryOfWords.join(' ');
+
+    return delimetedText;
+  }
+
   return (
     <Panel className="turivius-card"
       shaded
@@ -12,7 +19,8 @@ export default function Card({ card, entities }) {
     >
       {card.content.map(c => 
        (<p key={c.title}>
-         <b>{c.title}:</b> {c.content}
+         <b>{c.title}:</b>
+         { `${delimitsNumberOfWords(c.content)} ...`}
        </p>)
       )}
     </Panel>
