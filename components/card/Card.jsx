@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Panel, Button, ButtonToolbar, Content, IconButton } from 
 'rsuite';
 import { Icon } from '@rsuite/icons';
-import { AiOutlineLike, AiTwotoneLike } from "react-icons/ai";
+import { AiOutlineLike, AiTwotoneLike, AiOutlineCopy } from "react-icons/ai";
 import '../../styles/Card.css';
 
 export default function Card({ card, entities }) {
@@ -80,6 +80,14 @@ export default function Card({ card, entities }) {
             size="1.6rem" 
             style={{ color: '#f37e00' }} />
         }
+        />
+        <IconButton
+          className="btn-copy"
+          onClick={ handleClickCopy }
+          icon={
+            <Icon as={ AiOutlineCopy }
+            size="1.6rem" 
+            style={{ color: '#f37e00' }} /> }
         />
       </ButtonToolbar>
     </Panel>
