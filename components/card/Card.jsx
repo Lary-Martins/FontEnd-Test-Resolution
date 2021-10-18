@@ -36,16 +36,18 @@ export default function Card({ card, entities }) {
         </a>}
         </span>
         <span className="datas">{`${card.data_pub} - ${card.data_jul}`}</span>
-        <b className="title">{ card.nome }</b>
       </section>
 
       <section className="content" >
-        {card.content.map(c => 
-          (<p key={c.title}>
-          <b>{c.title}: </b>
-          { showMore ? c.content : `${delimitsNumberOfWords(c.content)} ...`}
-        </p>)
-      )}
+        <b className="title">{ card.nome }</b>
+        <div>
+          {card.content.map(c => 
+            (<p key={c.title}>
+            <b>{c.title}: </b>
+            { showMore ? c.content : `${delimitsNumberOfWords(c.content)} ...`}
+          </p>)
+          )}
+        </div>
       </section>
 
       </Content>
