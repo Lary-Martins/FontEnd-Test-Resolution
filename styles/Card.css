@@ -1,4 +1,46 @@
 .turivius-card.rs-panel {
-  background-color: #fff;
+  background-color: #d6d7e9;
+  color:#3a3a3a;
   margin: 5px;
+}
+.turivius-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.turivius-card-header .initials {
+  width: 100px;
+  height: 30px;
+  border-radius: 6px;
+  padding: 5px 11px 7px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 800;
+  background-color: #e61e25;
+}
+.turivius-card-header .name a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #4965a0;
+}
+.turivius-card-container .title {
+  color: #001645;
+}
+.turivius-card-container .content {
+  margin-top: 10px;
+}
+
+.turivius-card .box-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.turivius-card .box-btns .btn-show {
+  width: 100px;
+  height: 30px;
+  padding: 5px 11px 7px;
 }
