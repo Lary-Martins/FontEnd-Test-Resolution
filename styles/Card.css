@@ -26,10 +26,14 @@
   font-weight: 800;
   color: #4965a0;
 }
+.turivius-card-header .name a:hover {
+  font-size: 15px;
+  transition: font-size 0.4s, color 0.4s linear;
+}
 .turivius-card-container .title {
   color: #001645;
 }
-.turivius-card-container .content {
+.turivius-card-container .content div {
   margin-top: 10px;
 }
 
