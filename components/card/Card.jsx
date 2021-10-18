@@ -24,6 +24,13 @@ export default function Card({ card, entities }) {
     setLike(!like);
   };
 
+  const handleClickCopy = () => {
+    const formattedText = `"${card.content[0].content}"
+    (${entities.name} - ${card.nome} - ${card.data_pub} - ${card.data_jul}).`;
+
+    navigator.clipboard.writeText(formattedText)
+  }
+
   return (
     <Panel
       className="turivius-card"
