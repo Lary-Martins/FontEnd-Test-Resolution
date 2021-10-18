@@ -1,10 +1,17 @@
 import React from 'react';
+import Image from 'next/image';
+import logo from '../../public/logo.png'
+
 import '../../styles/Header.css';
 
-function TuriviusHeader() {
-    return <div className="turivius-header">
-        <img src="/logo.png"/>
-    </div>
+export default function TuriviusHeader() {
+    return (
+      <div className="turivius-header">
+        <Image 
+         className="img"
+         src={ logo }
+         alt="Turivius logo"
+        />
+      </div>
+    )
 }
-
-export default TuriviusHeader;
