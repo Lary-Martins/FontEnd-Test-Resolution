@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Panel, Button, ButtonToolbar } from 'rsuite';
+import { Panel, Button, ButtonToolbar, Content } from 'rsuite';
 import '../../styles/Card.css';
 
 export default function Card({ card, entities }) {
-  console.log({ card, entities })
   const [showMore, setShowMore] = useState(false);
 
   const delimitsNumberOfWords = (text) => {
@@ -23,20 +22,43 @@ export default function Card({ card, entities }) {
       shaded
       bordered
     >
-      {card.content.map(c => 
-       (<p key={c.title}>
-         <b>{c.title}:</b>
-         { showMore ? c.content : `${delimitsNumberOfWords(c.content)} ...`}
-       </p>)
+    <Content
+      className="turivius-card-container">
+
+      <section className="turivius-card-header">
+        <span className="initials">{ entities.initials }</span>
+        <span className="name">
+        {<a
+          target="_blank"
+          href={ card.url }
+          rel="noreferrer"
+          >{ entities.name }
+        </a>}
+        </span>
+        <span className="datas">{`${card.data_pub} - ${card.data_jul}`}</span>
+        <b className="title">{ card.nome }</b>
+      </section>
+
+      <section className="content" >
+        {card.content.map(c => 
+          (<p key={c.title}>
+          <b>{c.title}: </b>
+          { showMore ? c.content : `${delimitsNumberOfWords(c.content)} ...`}
+        </p>)
       )}
+      </section>
+
+      </Content>
+
       <ButtonToolbar
-       className="btn">
+       className="box-btns">
         <Button
           className="btn-show"
           appearance="ghost"
+          color="orange"
           onClick={ handleClickShowMore }
-          >
-            Ver mais
+        >
+          Ver mais
         </Button>
       </ButtonToolbar>
     </Panel>
