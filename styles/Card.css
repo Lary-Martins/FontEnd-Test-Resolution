@@ -28,7 +28,7 @@
 }
 .turivius-card-header .name a:hover {
   font-size: 15px;
-  transition: font-size 0.4s, color 0.4s linear;
+  transition: font-size 0.4s linear;
 }
 .turivius-card-container .title {
   color: #001645;
@@ -36,7 +36,6 @@
 .turivius-card-container .content div {
   margin-top: 10px;
 }
-
 .turivius-card .box-btns {
   display: flex;
   flex-direction: row;
@@ -55,7 +54,7 @@
   -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
   transition: width 1s, height 1s, transform 1s;
 }
-.turivius-card .box-btns .btn-like:focus-within {
+.turivius-card .box-btns .btn-like:focus {
   width: 100px;
   height: 30px;
   -webkit-transform: rotate(-360deg);
@@ -70,3 +69,46 @@ padding-bottom: 3px;
   padding: 5px 11px 7px;
 } 
 
+@media (max-width: 900px) {
+  .turivius-card-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .turivius-card-header .name a {
+    margin-bottom: 10px;
+  }
+  .turivius-card-header .name a:hover {
+    font-size: 14.6px;
+    transition: font-size 0.4s linear;
+  }
+  .turivius-card-container .content div {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .turivius-card .box-btns .btn-show {
+    width: 80px;
+    height: 30px;
+    padding: 5px 11px 7px;
+  }
+  .turivius-card .box-btns .btn-like {
+    width: 80px;
+    height: 30px;
+    padding: 3px 11px 5px;
+    -webkit-transition: -webkit-transform 1s;
+    transition: transform 1s;
+  }
+  .turivius-card .box-btns .btn-like:focus {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(360deg);
+  }
+  .rs-btn-icon.rs-btn > .rs-icon {
+    padding-bottom: 4px;
+  }
+  .turivius-card .box-btns .btn-copy {
+    width: 80px;
+    height: 30px;
+    padding: 5px 11px 7px;
+  }
+}
