@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { Panel, Button, ButtonToolbar, Content } from 'rsuite';
+import { Panel, Button, ButtonToolbar, Content, IconButton } from 
+'rsuite';
+import { Icon } from '@rsuite/icons';
+import { AiOutlineLike, AiTwotoneLike } from "react-icons/ai";
 import '../../styles/Card.css';
 
 export default function Card({ card, entities }) {
   const [showMore, setShowMore] = useState(false);
+  const [like, setLike] = useState(false);
 
   const delimitsNumberOfWords = (text) => {
     const arryOfWords = text.split(' ', 50);
@@ -15,6 +19,10 @@ export default function Card({ card, entities }) {
   const handleClickShowMore = () => {
     setShowMore(!showMore);
   }
+
+  const handleClickLike = () => {
+    setLike(!like);
+  };
 
   return (
     <Panel
@@ -62,6 +70,17 @@ export default function Card({ card, entities }) {
         >
           Ver mais
         </Button>
+        <IconButton
+          className="btn-like"
+          onClick={ handleClickLike }
+          icon={
+          like ? <Icon as={ AiTwotoneLike } size="1.6rem"
+            style={{ color: '#f37e00' }} /> :
+          <Icon as={ AiOutlineLike }
+            size="1.6rem" 
+            style={{ color: '#f37e00' }} />
+        }
+        />
       </ButtonToolbar>
     </Panel>
 )
