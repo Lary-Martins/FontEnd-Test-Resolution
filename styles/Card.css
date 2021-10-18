@@ -64,4 +64,9 @@
 .rs-btn-icon.rs-btn > .rs-icon {
 padding-bottom: 3px;
 }
+.turivius-card .box-btns .btn-copy {
+  width: 100px;
+  height: 30px;
+  padding: 5px 11px 7px;
+} 
 
